@@ -1,0 +1,31 @@
+{
+  "Index": {
+    "sections": {
+      "lubikrohv": {
+        "title": "Lubikrohv",
+        "subtitle": "Parem kui lihtsalt puine",
+        "description": "Lubikrohv on vastupidav ja hingav materjal, mis pakub looduslikku viimistlust. See aitab reguleerida sisekliima niiskust, ennetades hallituse teket ja luues tervisliku elukeskkonna. Selle ajatu esteetika lisab igale ruumile võlu ja iseloomu."
+      },
+      "mikrotsement": {
+        "title": "Mikrotsement",
+        "subtitle": "Modernne viimistlus",
+        "description": "Mikrotsement on kaasaegne ja vastupidav pinnaviimistlus, mis loob sileda ja elegantse tulemuse. See on ideaalne valik nii seintele kui põrandatele, pakkudes veekindlat ja kulumiskindlat lahendust, mis sobib täiuslikult kaasaegsesse interjööri."
+      },
+      "kanepivilla-isolatsioon": {
+        "title": "Kanepivilla Isolatsioon",
+        "subtitle": "Looduslik soojustus",
+        "description": "Kanepivilla isolatsioon on ökoloogiline ja efektiivne soojustuslahendus. See tagab suurepärase soojapidavuse, reguleerib niiskust ja on täielikult taaskasutatav. Lisaks on see tulekindel ja vastupidav kahjuritele."
+      },
+      "kontakt": {
+        "title": "Kontakt",
+        "subtitle": "Võta ühendust",
+        "description": "Oleme siin, et aidata teil leida parim lahendus teie projektile. Võtke meiega ühendust ja arutame, kuidas saame teie visiooni ellu viia."
+      }
+    },
+    "footer": {
+      "copyright": "© {year} Kivi",
+      "location": "Tallinn, Eesti"
+    }
+  }
+}
+
