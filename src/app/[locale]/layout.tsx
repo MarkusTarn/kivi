@@ -1,5 +1,5 @@
 import { Chivo, MuseoModerno } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -25,7 +25,7 @@ export default async function RootLayout({
 	params,
 }: {
 	children: ReactNode;
-	params: { locale: string };
+	params: Promise<{ locale: string }>;
 }) {
 	const { locale } = await params;
 
