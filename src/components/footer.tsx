@@ -10,7 +10,7 @@ export default function Footer() {
 			<p>{t("footer.copyright", { year: new Date().getFullYear() })}</p>
 			<a href="tel:+37254518200">+372 5451 8200</a>
 			<a href="mailto:toomas@kivi.ee">toomas@kivi.ee</a>
-			<p>{t("footer.location")}</p>
+			<p className="hidden md:block">{t("footer.location")}</p>
 		</footer>
 	);
 }
