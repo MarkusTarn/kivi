@@ -1,62 +1,48 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { sections } from "@/sections";
+import { cn } from "@/utils";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
 
-const Navigation = () => {
-	const [activeSection, setActiveSection] = useState("hero");
+type NavigationProps = {
+	currentSection: number;
+	scrollToSection: (index: number) => void;
+};
 
-	const navigationItems = [
-		"Lubikrohv",
-		"Mikrotsement",
-		"Kanepivilla Isolatsioon",
-		"Kontakt",
-	];
-
-	useEffect(() => {
-		const handleScroll = () => {
-			const sections = [
-				"hero",
-				"lubikrohv",
-				"mikrotsement",
-				"kanepivilla",
-				"contact",
-			];
-			const currentSection = sections.find((section) => {
-				const element = document.getElementById(section);
-				if (element) {
-					const rect = element.getBoundingClientRect();
-					return rect.top <= 100 && rect.bottom >= 100;
-				}
-				return false;
-			});
-			if (currentSection) setActiveSection(currentSection);
-		};
-
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+const Navigation = (props: NavigationProps) => {
+	const { currentSection, scrollToSection } = props;
+	const t = useTranslations("Index");
 
 	return (
-		<nav className="fixed top-0 left-0 right-0 z-50 shadow-md">
-			<ul className="flex flex-col space-x-4 p-4">
-				<h1 className="text-4xl font-bold mb-1">Kivi</h1>
-				<p className="text-xl">Rohkem kui lihtsalt puine</p>
-				<div className="flex-1">t</div>
-				{navigationItems.map((item) => (
-					<li key={item}>
-						<a
-							href={`#${item.toLowerCase().replace(" ", "-")}`}
-							className={`text-sm font-medium ${
-								activeSection === item.toLowerCase().replace(" ", "-")
-									? "text-blue-600"
-									: "text-gray-600 hover:text-blue-600"
-							}`}
-						>
-							{item}
-						</a>
-					</li>
+		<nav className="h-full pb-40 absolute top-8 left-8 flex flex-col space-y-1 text-white z-10">
+			<Link
+				href="/"
+				className="text-2xl font-medium tracking-tight text-shadow-pop"
+				style={{ fontFamily: "var(--font-museo-moderno)" }}
+			>
+				{t("title")}
+			</Link>
+			<p className="text-sm opacity-80 text-shadow-pop">{t("subtitle")}</p>
+			<div className="flex-1" />
+			<div className="pt-8 space-y-2 hidden md:block">
+				{sections.map((section, index) => (
+					<button
+						type="button"
+						key={section.id}
+						onClick={() => scrollToSection(index)}
+						className={cn(
+							"block transition-opacity hover:opacity-100",
+							"text-2xl text-shadow-pop",
+							currentSection === index ? "opacity-100" : "opacity-60",
+							currentSection === index && "underline",
+							currentSection === index && "pl-4 transition-padding",
+						)}
+					>
+						{t(`sections.${section.id}.title`)}
+					</button>
 				))}
-			</ul>
+			</div>
 		</nav>
 	);
 };
