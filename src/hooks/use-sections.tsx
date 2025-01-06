@@ -31,6 +31,11 @@ export default function useSections() {
 			observer: useInView(intersectionOptions),
 		},
 		{
+			id: "tiles",
+			background: "/tiles.jpg",
+			observer: useInView(intersectionOptions),
+		},
+		{
 			id: "contact",
 			background: "/contact.jpg",
 			observer: useInView(intersectionOptions),
